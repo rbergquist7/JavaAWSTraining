@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      <head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <h1 align="center">My Country List</h1>
+    <br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+            	<th>Id</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<tr th:each="country:${countries}">
+        	<td th:text="${country.id}"> Id</td>
+        	<td th:text="${country.country1}"> Country</td>
+        	<td><a th:href="@{/view/{id}(id=${country.id})}">view details</a></td>
+                	
+        </tr>
+        </tbody>
+        <tfoot>
+        	<a href="/new"> click here add a country to the list</a>
+        </tfoot>
+        </table>
+
+</body>
+</html>
